@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>$PUMP Token — Solana Meme Coin</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:#0a0a0a;color:#fff;min-height:100vh}
+    .w{width:100%;max-width:720px;margin:0 auto;padding:24px 16px}
+    .th{text-align:center;margin-bottom:24px}
+    .tl{width:80px;height:80px;border-radius:50%;background:#1a1a1a;border:1px solid #2a2a2a;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:32px}
+    .tn{font-size:28px;font-weight:600;margin-bottom:4px}
+    .ts{font-size:16px;color:#888}
+    .cb{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:12px 16px;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+    .cl{font-size:12px;color:#666;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+    .ca{font-family:"SF Mono",Monaco,monospace;font-size:13px;color:#aaa;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .ca2{display:flex;gap:8px}
+    .ib{width:32px;height:32px;border-radius:8px;border:1px solid #2a2a2a;background:transparent;color:#888;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s ease}
+    .ib:hover{background:#2a2a2a;color:#fff}
+    .ib svg{width:16px;height:16px}
+    .ag{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px}
+    .ab{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 16px;border-radius:12px;border:1px solid #2a2a2a;background:#1a1a1a;color:#fff;font-size:15px;font-weight:500;cursor:pointer}
+    .ab:hover{background:#2a2a2a;border-color:#fff}
+    .ab.p{background:#fff;color:#0a0a0a;border-color:#fff}
+    .ab.p:hover{opacity:.9}
+    .ab svg{width:18px;height:18px}
+    .sg{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+    .sb{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:12px;border:1px solid #2a2a2a;background:#1a1a1a;color:#888;font-size:14px;cursor:pointer;text-decoration:none}
+    .sb:hover{background:#2a2a2a;color:#fff;border-color:#fff}
+    .sb svg{width:18px;height:18px}
+    .stg{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+    .sc{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:16px;text-align:center}
+    .sv{font-size:20px;font-weight:600;margin-bottom:4px}
+    .sl{font-size:12px;color:#666}
+    .se{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:16px;margin-bottom:20px}
+    .st{font-size:15px;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+    .st svg{width:18px;height:18px;color:#888}
+    .tb{display:flex;flex-direction:column;gap:12px}
+    .tr{display:flex;align-items:center;gap:12px}
+    .tl2{width:100px;font-size:13px;color:#888;flex-shrink:0}
+    .tt{flex:1;height:24px;background:#0a0a0a;border-radius:6px;overflow:hidden}
+    .tf{height:100%;border-radius:6px}
+    .tv{width:50px;font-size:13px;font-weight:500;text-align:right;flex-shrink:0}
+    .rm{position:relative;padding-left:24px}
+    .rm::before{content:'';position:absolute;left:7px;top:4px;bottom:4px;width:2px;background:#2a2a2a}
+    .ri{position:relative;margin-bottom:20px}
+    .ri:last-child{margin-bottom:0}
+    .rd{position:absolute;left:-20px;top:2px;width:12px;height:12px;border-radius:50%;border:2px solid #2a2a2a;background:#1a1a1a}
+    .ri.d .rd{background:#22c55e;border-color:#22c55e}
+    .ri.a .rd{background:#3b82f6;border-color:#3b82f6}
+    .rp{font-size:12px;color:#666;margin-bottom:2px}
+    .rt{font-size:14px;font-weight:600;margin-bottom:4px}
+    .rde{font-size:13px;color:#888;line-height:1.5}
+    .sp{display:flex;flex-direction:column;gap:12px}
+    .stp{display:flex;gap:12px;align-items:flex-start}
+    .sn{width:28px;height:28px;border-radius:50%;background:#fff;color:#0a0a0a;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0}
+    .sct{flex:1}
+    .stt{font-size:14px;font-weight:600;margin-bottom:2px}
+    .sd{font-size:13px;color:#888;line-height:1.5}
+    .fi{border-bottom:1px solid #2a2a2a}
+    .fi:last-child{border-bottom:none}
+    .fq{display:flex;align-items:center;justify-content:space-between;padding:14px 0;cursor:pointer;font-size:14px;font-weight:600}
+    .fq svg{width:16px;height:16px;color:#666;transition:transform .2s ease;flex-shrink:0}
+    .fi.o .fq svg{transform:rotate(180deg)}
+    .fa{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease}
+    .fi.o .fa{max-height:200px;padding-bottom:14px}
+    .fa p{font-size:13px;color:#888;line-height:1.6}
+    .wb{background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.25);border-radius:12px;padding:12px 16px;display:flex;align-items:flex-start;gap:10px}
+    .wb svg{width:18px;height:18px;color:#eab308;flex-shrink:0;margin-top:2px}
+    .wt{font-size:13px;color:#888;line-height:1.5}
+    .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:#fff;color:#0a0a0a;padding:10px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;transition:all .25s ease}
+    .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+    @media(max-width:480px){.ag{grid-template-columns:1fr}.stg{grid-template-columns:repeat(2,1fr)}.sg{grid-template-columns:1fr}.tn{font-size:22px}.tl2{width:80px;font-size:12px}}
+  </style>
+</head>
+<body>
+  <div class="w">
+    <div class="th">
+      <div class="tl">🪙</div>
+      <div class="tn">$PUMP Token</div>
+      <div class="ts">Solana Meme Coin</div>
+    </div>
+
+    <div class="cb">
+      <span class="cl">Contrato</span>
+      <span class="ca" id="cA">CLY71nCdMvJF4oFYfqqdRSjngCjtq6hPgfM8R569pump</span>
+      <div class="ca2">
+        <button class="ib" id="copyBtn" title="Copiar contrato">📋</button>
+        <a class="ib" href="#" id="openExplorer" title="Abrir no explorer">🔗</a>
+      </div>
+    </div>
+
+    <div class="ag">
+      <a class="ab p" href="https://jup.ag/swap/SOL-CLY71nCdMvJF4oFYfqqdRSjngCjtq6hPgfM8R569pump" target="_blank" rel="noopener noreferrer">Comprar (Jup)</a>
+      <a class="ab" href="#" id="addToken">Adicionar à wallet</a>
+    </div>
+
+    <div class="sg">
+      <a class="sb" href="https://x.com/assis2y" target="_blank" rel="noopener noreferrer">Twitter/X</a>
+      <a class="sb" href="#" target="_blank" rel="noopener noreferrer">Telegram</a>
+      <a class="sb" href="#" target="_blank" rel="noopener noreferrer">Docs</a>
+    </div>
+
+    <div class="stg">
+      <div class="sc"><div class="sv">$1.2M</div><div class="sl">Market cap</div></div>
+      <div class="sc"><div class="sv">2.4K</div><div class="sl">Holders</div></div>
+      <div class="sc"><div class="sv">24H</div><div class="sl">Volume</div></div>
+    </div>
+
+    <div class="se">
+      <div class="st">Tokenomics</div>
+      <div class="tb">
+        <div class="tr"><div class="tl2">Supply</div><div class="tt"><div class="tf">1,000,000,000</div></div><div class="tv">100%</div></div>
+        <div class="tr"><div class="tl2">Tax</div><div class="tt"><div class="tf">Buy 0% / Sell 0%</div></div><div class="tv">—</div></div>
+      </div>
+    </div>
+
+    <div class="se">
+      <div class="st">Roadmap</div>
+      <div class="sp">
+        <div class="ri d">
+          <div class="rd"></div>
+          <div class="rp">Fase 1</div>
+          <div class="rt">Lançamento</div>
+          <div class="rde">Contrato criado, site e primeiros holders.</div>
+        </div>
+        <div class="ri a">
+          <div class="rd"></div>
+          <div class="rp">Fase 2</div>
+          <div class="rt">Listagens</div>
+          <div class="rde">Listagem em DEX e campanhas de divulgação.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wb">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden style="width:18px;height:18px;color:#eab308"><path d="M12 7a.9.9 0 00-.9.826v6.348a.9.9 0 001.8 0V7.826A.9.9 0 0012 7zM12.9 17.1a.9.9 0 11-1.8 0 .9.9 0 011.8 0z" fill="currentColor"></path></svg>
+      <div>
+        <div class="wt">Cuidado: sempre verifique o contrato antes de comprar. Este site é apenas informativo.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="toast" id="toast">Endereço copiado!</div>
+
+  <script>
+    (function(){
+      const contractEl = document.getElementById('cA');
+      const copyBtn = document.getElementById('copyBtn');
+      const toast = document.getElementById('toast');
+      const openExplorer = document.getElementById('openExplorer');
+
+      copyBtn.addEventListener('click', async function(){
+        try {
+          await navigator.clipboard.writeText(contractEl.textContent.trim());
+          showToast();
+        } catch (e) {
+          console.error('Copy failed', e);
+        }
+      });
+
+      openExplorer.addEventListener('click', function(e){
+        e.preventDefault();
+        const url = 'https://explorer.solana.com/address/' + encodeURIComponent(contractEl.textContent.trim());
+        window.open(url, '_blank');
+      });
+
+      function showToast(){
+        toast.classList.add('show');
+        setTimeout(()=>toast.classList.remove('show'), 2000);
+      }
+
+      // Optional: Add token to compatible wallets (placeholder)
+      const addTokenBtn = document.getElementById('addToken');
+      addTokenBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        alert('Para adicionar este token à sua wallet, copie o contrato e use a função "Adicionar token" da sua carteira.');
+      });
+    })();
+  </script>
+</body>
+</html>
