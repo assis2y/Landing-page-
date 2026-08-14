@@ -1,102 +1,318 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>$vinckmonero Token — Solana Meme Coin</title>
+<title>VKMR — VinckMonero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:#0a0a0a;color:#fff;min-height:100vh}
-.w{width:100%;max-width:720px;margin:0 auto;padding:24px 16px}
-.th{text-align:center;margin-bottom:24px}
-.tl{width:80px;height:80px;border-radius:50%;background:#1a1a1a;border:1px solid #2a2a2a;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:32px}
-.tn{font-size:28px;font-weight:600;margin-bottom:4px}
-.ts{font-size:16px;color:#888}
-.cb{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:12px 16px;margin-bottom:20px;display:flex;align-items:center;gap:12px}
-.cl{font-size:12px;color:#666;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
-.ca{font-family:"SF Mono",Monaco,monospace;font-size:13px;color:#aaa;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ca2{display:flex;gap:8px}
-.ib{width:32px;height:32px;border-radius:8px;border:1px solid #2a2a2a;background:transparent;color:#888;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s ease}
-.ib:hover{background:#2a2a2a;color:#fff}
-.ib svg{width:16px;height:16px}
-.ag{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px}
-.ab{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 16px;border-radius:12px;border:1px solid #2a2a2a;background:#1a1a1a;color:#fff;font-size:15px;font-weight:500;cursor:pointer;text-decoration:none;transition:all .15s ease}
-.ab:hover{background:#2a2a2a;border-color:#fff}
-.ab.p{background:#fff;color:#0a0a0a;border-color:#fff}
-.ab.p:hover{opacity:.9}
-.ab svg{width:18px;height:18px}
-.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
-.sb{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:12px;border:1px solid #2a2a2a;background:#1a1a1a;color:#888;font-size:14px;cursor:pointer;text-decoration:none;transition:all .15s ease}
-.sb:hover{background:#2a2a2a;color:#fff;border-color:#fff}
-.sb svg{width:18px;height:18px}
-.stg{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
-.sc{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:16px;text-align:center}
-.sv{font-size:20px;font-weight:600;margin-bottom:4px}
-.sl{font-size:12px;color:#666}
-.se{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:16px;margin-bottom:20px}
-.st{font-size:15px;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-.st svg{width:18px;height:18px;color:#888}
-.tb{display:flex;flex-direction:column;gap:12px}
-.tr{display:flex;align-items:center;gap:12px}
-.tl2{width:100px;font-size:13px;color:#888;flex-shrink:0}
-.tt{flex:1;height:24px;background:#0a0a0a;border-radius:6px;overflow:hidden}
-.tf{height:100%;border-radius:6px}
-.tv{width:50px;font-size:13px;font-weight:500;text-align:right;flex-shrink:0}
-.rm{position:relative;padding-left:24px}
-.rm::before{content:'';position:absolute;left:7px;top:4px;bottom:4px;width:2px;background:#2a2a2a}
-.ri{position:relative;margin-bottom:20px}
-.ri:last-child{margin-bottom:0}
-.rd{position:absolute;left:-20px;top:2px;width:12px;height:12px;border-radius:50%;border:2px solid #2a2a2a;background:#1a1a1a}
-.ri.d .rd{background:#22c55e;border-color:#22c55e}
-.ri.a .rd{background:#3b82f6;border-color:#3b82f6}
-.rp{font-size:12px;color:#666;margin-bottom:2px}
-.rt{font-size:14px;font-weight:600;margin-bottom:4px}
-.rde{font-size:13px;color:#888;line-height:1.5}
-.sp{display:flex;flex-direction:column;gap:12px}
-.stp{display:flex;gap:12px;align-items:flex-start}
-.sn{width:28px;height:28px;border-radius:50%;background:#fff;color:#0a0a0a;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0}
-.sct{flex:1}
-.stt{font-size:14px;font-weight:600;margin-bottom:2px}
-.sd{font-size:13px;color:#888;line-height:1.5}
-.fi{border-bottom:1px solid #2a2a2a}
-.fi:last-child{border-bottom:none}
-.fq{display:flex;align-items:center;justify-content:space-between;padding:14px 0;cursor:pointer;font-size:14px;font-weight:600}
-.fq svg{width:16px;height:16px;color:#666;transition:transform .2s ease;flex-shrink:0}
-.fi.o .fq svg{transform:rotate(180deg)}
-.fa{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease}
-.fi.o .fa{max-height:200px;padding-bottom:14px}
-.fa p{font-size:13px;color:#888;line-height:1.6}
-.wb{background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.25);border-radius:12px;padding:12px 16px;display:flex;align-items:flex-start;gap:10px}
-.wb svg{width:18px;height:18px;color:#eab308;flex-shrink:0;margin-top:2px}
-.wt{font-size:13px;color:#888;line-height:1.5}
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:#fff;color:#0a0a0a;padding:10px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;transition:all .3s ease;pointer-events:none;z-index:100}
-.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
-@media(max-width:480px){.ag{grid-template-columns:1fr}.stg{grid-template-columns:repeat(2,1fr)}.sg{grid-template-columns:1fr}.tn{font-size:22px}.tl2{width:80px;font-size:12px}}
+  :root{
+    --ink:#0B0D10;
+    --panel:#12151A;
+    --panel-line:#22262E;
+    --paper:#E7E3D8;
+    --paper-dim:#9C9A90;
+    --amber:#D4A73D;
+    --amber-dim:#8A712C;
+    --redact:#1C2026;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'IBM Plex Mono', monospace;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+  a{color:var(--amber); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+  .eyebrow{
+    font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--amber-dim); display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:6px; height:6px; background:var(--amber); border-radius:50%; display:inline-block; animation:pulse 2.4s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:.25;}}
+
+  header.hero{
+    min-height:92vh; display:flex; flex-direction:column; justify-content:center;
+    border-bottom:1px solid var(--panel-line);
+    position:relative; overflow:hidden;
+  }
+  header.hero .wrap{padding-top:80px; padding-bottom:80px;}
+  .hero-top{margin-bottom:48px;}
+
+  .redact-line{display:flex; flex-wrap:wrap; gap:.5ch;}
+  h1.title{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(56px, 12vw, 132px);
+    letter-spacing:-0.02em;
+    color:var(--paper);
+    line-height:0.95;
+    display:flex;
+  }
+  .glyph{
+    position:relative;
+    display:inline-block;
+    background:var(--redact);
+    color:transparent;
+    border-radius:3px;
+    animation:reveal 0.05s steps(1) forwards;
+    animation-fill-mode:forwards;
+  }
+  .glyph.on{background:transparent; color:var(--paper);}
+
+  .tagline{
+    max-width:52ch; margin-top:28px; font-size:17px; color:var(--paper-dim);
+    font-family:'IBM Plex Mono', monospace;
+  }
+  .tagline b{color:var(--paper); font-weight:500;}
+
+  .hero-meta{
+    display:flex; gap:32px; margin-top:56px; flex-wrap:wrap;
+    font-size:13px; color:var(--paper-dim);
+  }
+  .hero-meta div{border-left:2px solid var(--panel-line); padding-left:12px;}
+  .hero-meta strong{display:block; color:var(--amber); font-weight:500; font-size:14px; margin-bottom:2px;}
+
+  section{padding:96px 0; border-bottom:1px solid var(--panel-line);}
+  .label{
+    font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--amber-dim);
+    margin-bottom:20px; display:block;
+  }
+  h2{
+    font-family:'Fraunces', serif; font-weight:500; font-size:clamp(28px,4vw,40px);
+    color:var(--paper); max-width:22ch; margin-bottom:24px; letter-spacing:-.01em;
+  }
+  p.lead{max-width:60ch; color:var(--paper-dim); font-size:16px;}
+  p.lead b{color:var(--paper); font-weight:500;}
+
+  .notice{
+    margin-top:32px; padding:16px 18px; background:var(--panel);
+    border:1px solid var(--panel-line); border-left:3px solid var(--amber-dim);
+    font-size:13px; color:var(--paper-dim); max-width:60ch;
+  }
+
+  /* ring diagram */
+  .ring-wrap{display:flex; justify-content:center; align-items:center; margin:56px 0;}
+  svg.ring{width:min(360px, 80vw); height:auto;}
+  .ring-node{fill:var(--redact); stroke:var(--panel-line); stroke-width:1;}
+  .ring-node.active{fill:var(--amber); }
+  .ring-edge{stroke:var(--panel-line); stroke-width:1; fill:none;}
+  .ring-edge.live{stroke:var(--amber-dim);}
+
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:40px;}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr;}}
+  .card{background:var(--panel); border:1px solid var(--panel-line); padding:28px;}
+  .card h3{font-family:'Fraunces',serif; font-weight:500; font-size:20px; margin-bottom:10px; color:var(--paper);}
+  .card p{font-size:14px; color:var(--paper-dim);}
+
+  .timeline{margin-top:40px; display:flex; flex-direction:column;}
+  .tl-row{display:grid; grid-template-columns:120px 1fr; gap:24px; padding:20px 0; border-top:1px solid var(--panel-line);}
+  .tl-row:last-child{border-bottom:1px solid var(--panel-line);}
+  .tl-stage{font-size:13px; color:var(--amber); letter-spacing:.08em; text-transform:uppercase;}
+  .tl-desc h4{font-family:'Fraunces',serif; font-weight:500; font-size:18px; color:var(--paper); margin-bottom:6px;}
+  .tl-desc p{font-size:14px; color:var(--paper-dim);}
+
+  .cta-row{display:flex; gap:16px; flex-wrap:wrap; margin-top:36px;}
+  .btn{
+    font-family:'IBM Plex Mono', monospace; font-size:14px; padding:13px 22px;
+    border:1px solid var(--panel-line); background:transparent; color:var(--paper);
+    cursor:pointer; display:inline-flex; align-items:center; gap:8px; transition:border-color .2s, color .2s;
+  }
+  .btn.primary{background:var(--amber); color:var(--ink); border-color:var(--amber); font-weight:600;}
+  .btn.primary:hover{background:transparent; color:var(--amber); text-decoration:none;}
+  .btn:not(.primary):hover{border-color:var(--amber-dim); color:var(--amber); text-decoration:none;}
+
+  footer{padding:56px 0 80px;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; font-size:13px; color:var(--paper-dim);}
+  footer .disclaimer{max-width:56ch; margin-top:24px; font-size:12px; color:var(--panel-line); line-height:1.7;}
+  footer .disclaimer{color:#5b5f66;}
 </style>
 </head>
 <body>
-<div class="w">
-<div class="th"><div class="tl">🪙</div><div class="tn">$PUMP Token</div><div class="ts">Solana Meme Coin</div></div>
 
-<div class="cb"><span class="cl">Contrato</span><span class="ca" id="cA">CLY71nCdMvJF4oFYfqqdRSjngCjtq6hPgfM8R569pump</span><div class="ca2"><button class="ib" onclick="navigator.clipboard.writeText(document.getElementById('cA').innerText);var t=document.getElementById('toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2000)" aria-label="Copiar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M17 7.1c2.154 0 3.9 1.746 3.9 3.9v6c0 2.154-1.746 3.9-3.9 3.9h-6a3.9 3.9 0 01-3.9-3.9v-6c0-2.154 1.746-3.9 3.9-3.9h6zm-6 1.8a2.1 2.1 0 00-2.1 2.1v6c0 1.16.94 2.1 2.1 2.1h6a2.1 2.1 0 002.1-2.1v-6a2.1 2.1 0 00-2.1-2.1h-6zM5.1 3a.9.9 0 01.9-.9h8a.9.9 0 010 1.8h-8a.9.9 0 01-.9-.9zm-.2 2a.9.9 0 01.9-.9h8a.9.9 0 01.9.9v8a.9.9 0 01-1.8 0V5.9h-7.1a.9.9 0 01-.9-.9z" fill="currentColor"/></svg></button><a class="ib" href="https://solscan.io/token/CLY71nCdMvJF4oFYfqqdRSjngCjtq6hPgfM8R569pump" target="_blank" aria-label="Solscan"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.886 4.913a.9.9 0 00-.9-.897h-7.833a.9.9 0 000 1.8h5.663L4.293 18.364a.9.9 0 001.274 1.272L18.094 7.084v5.663a.9.9 0 001.8 0V5.085a.9.9 0 00-.008-.172z" fill="currentColor"/></svg></a></div></div>
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <span class="eyebrow">projeto de estudo &middot; solidity &middot; em construção</span>
+    </div>
+    <h1 class="title" id="title" aria-label="VKMR"></h1>
+    <p class="tagline">
+      <b>VinckMonero (VKMR)</b> é um token experimental escrito em Solidity, construído para aprender —
+      publicamente, um commit de cada vez — como funcionam privacidade e propriedade em cadeia.
+    </p>
+    <div class="hero-meta">
+      <div><strong>VKMR</strong>ticker</div>
+      <div><strong>Solidity</strong>linguagem</div>
+      <div><strong>GitHub</strong>código aberto</div>
+      <div><strong>Estudo</strong>não é produto</div>
+    </div>
+    <div class="cta-row">
+      <a class="btn primary" href="https://github.com/assis2y/Vinckmonero-" target="_blank" rel="noopener">Ver o repositório</a>
+      <a class="btn" href="https://x.com/assis2y" target="_blank" rel="noopener">Acompanhar no X</a>
+    </div>
+  </div>
+</header>
 
-<div class="ag"><a class="ab p" href="https://jup.ag/swap/SOL-CLY71nCdMvJF4oFYfqqdRSjngCjtq6hPgfM8R569pump" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9.052 5.809V16.29a.9.9 0 001.8 0V7.824a.9.9 0 011.8 0v10.557a.9.9 0 001.374.77l6.069-4.43a.9.9 0 00.127-1.378l-7.136-6.194c-1.813-1.573-4.635-.285-4.635 2.115v-1.986a.9.9 0 00-1.8 0v1.986c-.91.055-1.64.179-2.273.366C3.893 9.052 1.7 11.793 1.7 15.016v1.968a.9.9 0 001.123.668.9.9 0 00.968-.414c.86-.885 1.594-1.332 2.312-1.588.559-.198 1.175-.306 1.949-.359V18.38a2.1 2.1 0 003.635 1.418l7.136-6.379a2.1 2.1 0 00-.127-3.378l-7.136-6.194a2.1 2.1 0 00-3.374 1.68v1.016z" fill="currentColor"/></svg>Comprar agora</a><a class="ab" href="https://dexscreener.com/solana/CLY71nCdMvJF4oFYfqqdRSjngCjtq6hPgfM8R569pump" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 3.085a1 1 0 011 1v13.951h14.994l.103.005a1 1 0 01-.103 1.995H5a2 2 0 01-2-2V4.085a1 1 0 011-1z" fill="currentColor"/><path d="M18.263 6.517a1 1 0 011.411 1.414l-4.95 4.95a1 1 0 01-1.414 0l-2.121-2.121a1 1 0 00-1.415 0l-3.536 3.536a1 1 0 11-1.414-1.414l3.536-3.536a3 3 0 014.243 0l1.414 1.414 4.243-4.243z" fill="currentColor"/></svg>Ver gráfico</a></div>
+<section id="what">
+  <div class="wrap">
+    <span class="label">O que é</span>
+    <h2>Um contrato, aberto, sendo construído em público</h2>
+    <p class="lead">
+      VKMR nasceu como <b>exercício de engenharia</b>: entender, na prática, como um contrato de token
+      é estruturado, testado e evoluído — usando conceitos de privacidade explorados por projetos como
+      o Monero como referência de estudo, não como promessa de produto pronto.
+    </p>
+    <div class="notice">
+      Este é um projeto educacional em desenvolvimento ativo. Não é uma oferta de investimento,
+      não tem garantias de valor ou liquidez, e o código pode mudar a qualquer momento.
+    </div>
+  </div>
+</section>
 
-<div class="sg"><a class="sb" href="https://x.com/assis2y" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>Twitter / X</a><a class="sb" href="https://t.me/" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>Telegram</a><a class="sb" href="#" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12.4 12.486c-.003-1.607 1.867-2.492 3.108-1.47l5.882 4.844c1.236 1.019.726 2.993-.798 3.322l-.151.026-2.745.382a.5.5 0 00-.03.009l-.024.016-2.036 1.882-.116.1c-1.18.937-2.95.164-3.066-1.34l-.007-.152-.017-7.619zm1.857-1.094a.5.5 0 00-.047.037l-5.882 4.844a.5.5 0 00.266.884l2.745-.382a.5.5 0 01.53.53l-.382 2.745a.5.5 0 00.884.266l5.882-4.844a.5.5 0 00-.266-.884l-2.745.382a.5.5 0 01-.53-.53l.382-2.745a.5.5 0 00-.266-.884.5.5 0 00-.266.037z" fill="currentColor"/></svg>Website</a></div>
+<section id="privacy">
+  <div class="wrap">
+    <span class="label">Por que privacidade</span>
+    <h2>Cada nó da rede confirma sem revelar quem confirmou</h2>
+    <p class="lead">
+      A referência de estudo por trás do VKMR é o conceito de <b>assinaturas em anel</b>: um grupo de
+      participantes valida uma transação em conjunto, sem expor qual deles a originou. O diagrama
+      abaixo é uma representação simplificada dessa ideia — o ponto em destaque muda, mas a origem
+      real permanece indistinguível dentro do anel.
+    </p>
+    <div class="ring-wrap">
+      <svg class="ring" viewBox="0 0 300 300" role="img" aria-label="Diagrama de anel representando assinatura em grupo">
+        <g id="ringGroup"></g>
+      </svg>
+    </div>
+  </div>
+</section>
 
-<div class="stg"><div class="sc"><div class="sv">$1.2M</div><div class="sl">Market cap</div></div><div class="sc"><div class="sv">2.4K</div><div class="sl">Holders</div></div><div class="sc"><div class="sv">1B</div><div class="sl">Supply total</div></div></div>
+<section id="build">
+  <div class="wrap">
+    <span class="label">Construído em público</span>
+    <h2>O repositório é o registro de verdade</h2>
+    <p class="lead">Todo progresso — testes, refatorações, decisões de arquitetura — fica versionado e visível.</p>
+    <div class="grid2">
+      <div class="card">
+        <h3>Código</h3>
+        <p>O contrato evolui a partir do que já existe no repositório, sem reescritas do zero. Cada mudança parte do histórico anterior.</p>
+      </div>
+      <div class="card">
+        <h3>Contribuição</h3>
+        <p>Issues marcadas como ponto de entrada para quem quiser explorar o código e sugerir melhorias.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="se"><div class="st"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 3.333a1 1 0 011 1v13.758h15.067a1 1 0 010 2H5a2 2 0 01-2-2V4.333a1 1 0 011-1z" fill="currentColor"/><path d="M18.263 6.517a1 1 0 011.411 1.414l-4.95 4.95a1 1 0 01-1.414 0l-2.121-2.121a1 1 0 00-1.415 0l-3.536 3.536a1 1 0 11-1.414-1.414l3.536-3.536a3 3 0 014.243 0l1.414 1.414 4.243-4.243z" fill="currentColor"/></svg>Tokenomics</div><div class="tb"><div class="tr"><span class="tl2">Liquidez</span><div class="tt"><div class="tf" style="width:80%;background:#3b82f6"></div></div><span class="tv">80%</span></div><div class="tr"><span class="tl2">Marketing</span><div class="tt"><div class="tf" style="width:10%;background:#ef4444"></div></div><span class="tv">10%</span></div><div class="tr"><span class="tl2">Desenvolvimento</span><div class="tt"><div class="tf" style="width:7%;background:#22c55e"></div></div><span class="tv">7%</span></div><div class="tr"><span class="tl2">Equipe</span><div class="tt"><div class="tf" style="width:3%;background:#a855f7"></div></div><span class="tv">3%</span></div></div></div>
+<section id="roadmap">
+  <div class="wrap">
+    <span class="label">Andamento</span>
+    <h2>Onde o projeto está agora</h2>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-stage">Atual</div>
+        <div class="tl-desc">
+          <h4>Base do contrato</h4>
+          <p>Estrutura em Solidity herdada do repositório original, em revisão e documentação.</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-stage">Em seguida</div>
+        <div class="tl-desc">
+          <h4>Testes e cobertura</h4>
+          <p>Suíte de testes para validar comportamento do token antes de qualquer nova funcionalidade.</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-stage">Depois</div>
+        <div class="tl-desc">
+          <h4>Documentação pública</h4>
+          <p>README e whitepaper curto explicando decisões técnicas, para quem quiser acompanhar ou contribuir.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="se"><div class="st"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M10 5.188A8.003 8.003 0 004.9 12c0 4.418 3.582 8 8 8a8.003 8.003 0 007.812-6h1.86A9.96 9.96 0 0112 21.9c-5.467 0-9.9-4.433-9.9-9.9S6.533 2.1 12 2.1c.186 0 .37.005.552.015" fill="currentColor"/><path d="M17.657 8.343l-4.95 4.95a1 1 0 01-1.414 0l-2.121-2.121a1 1 0 00-1.415 0l-3.536 3.536a1 1 0 11-1.414-1.414l3.536-3.536a3 3 0 014.243 0l1.414 1.414 4.243-4.243a1 1 0 011.414 1.414z" fill="currentColor"/></svg>Roadmap</div><div class="rm"><div class="ri d"><div class="rd"></div><div class="rp">Fase 1 — Concluída</div><div class="rt">Lançamento no Pump.fun</div><div class="rde">Token criado e listado na curva de ligação. Liquidez inicial estabelecida.</div></div><div class="ri d"><div class="rd"></div><div class="rp">Fase 2 — Concluída</div><div class="rt">Listagem em DEX</div><div class="rde">Migrado para Raydium. Par de trading ativo com liquidez bloqueada.</div></div><div class="ri a"><div class="rd"></div><div class="rp">Fase 3 — Em andamento</div><div class="rt">Marketing & comunidade</div><div class="rde">Campanhas no Twitter/X, parcerias com influencers e crescimento orgânico.</div></div><div class="ri"><div class="rd"></div><div class="rp">Fase 4 — Futuro</div><div class="rt">Utilidade & expansão</div><div class="rde">Integrações DeFi, staking e possíveis listagens em CEXs.</div></div></div></div>
+<footer>
+  <div class="wrap">
+    <div>VKMR — VinckMonero</div>
+    <div><a href="https://github.com/assis2y/Vinckmonero-" target="_blank" rel="noopener">github.com/assis2y/Vinckmonero-</a> &middot; <a href="https://x.com/assis2y" target="_blank" rel="noopener">@assis2y</a></div>
+  </div>
+  <div class="wrap">
+    <p class="disclaimer">
+      Projeto pessoal de estudo em Solidity. Nada nesta página constitui aconselhamento financeiro
+      ou oferta de compra/venda de qualquer ativo.
+    </p>
+  </div>
+</footer>
 
-<div class="se"><div class="st"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12.068 2.034a.9.9 0 01.9.9v8.166h8.097a.9.9 0 01.9.9.9.9 0 01-.9.9h-8.097v8.165a.9.9 0 01-.9.9.9.9 0 01-.9-.9V12.9H2.966a.9.9 0 01-.9-.9.9.9 0 01.9-.9h8.202V2.934a.9.9 0 01.9-.9z" fill="currentColor"/></svg>Como comprar</div><div class="sp"><div class="stp"><div class="sn">1</div><div class="sct"><div class="stt">Crie uma wallet Solana</div><div class="sd">Baixe Phantom, Solflare ou Backpack. Guarde sua seed phrase com segurança.</div></div></div><div class="stp"><div class="sn">2</div><div class="sct"><div class="stt">Deposite SOL</div><div class="sd">Transfira SOL da sua exchange (Binance, Coinbase, etc.) para o endereço da sua wallet.</div></div></div><div class="stp"><div class="sn">3</div><div class="sct"><div class="stt">Conecte no Jupiter</div><div class="sd">Acesse jup.ag, conecte sua wallet e cole o endereço do contrato do token.</div></div></div><div class="stp"><div class="sn">4</div><div class="sct"><div class="stt">Confirme a swap</div><div class="sd">Escolha o valor, revise a taxa de slippage e confirme a transação na sua wallet.</div></div></div></div></div>
+<script>
+  // Redaction-reveal title animation
+  const word = "VKMR";
+  const titleEl = document.getElementById('title');
+  word.split('').forEach((ch, i) => {
+    const span = document.createElement('span');
+    span.className = 'glyph';
+    span.textContent = ch;
+    span.style.animationDelay = (0.4 + i * 0.18) + 's';
+    titleEl.appendChild(span);
+  });
+  const glyphs = titleEl.querySelectorAll('.glyph');
+  glyphs.forEach((g, i) => {
+    setTimeout(() => g.classList.add('on'), 400 + i * 180 + 260);
+  });
 
-<div class="se"><div class="st"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2.1a9.9 9.9 0 110 19.8 9.9 9.9 0 010-19.8zm0 1.8a8.1 8.1 0 100 16.2 8.1 8.1 0 000-16.2zM12 16.5a.9.9 0 110 1.8.9.9 0 010-1.8zm0-11.7a.9.9 0 01.9.9v7.2a.9.9 0 01-1.8 0V5.7a.9.9 0 01.9-.9z" fill="currentColor"/></svg>FAQ</div><div class="fi"><div class="fq" onclick="this.parentElement.classList.toggle('o')">O que é esse token?<svg viewBox="0 0 24 24" fill="none"><path d="M11.386 21.639a.9.9 0 001.27 0l5.539-5.539a.9.9 0 10-1.272-1.272L12 19.753l-4.923-4.925a.9.9 0 00-1.272 1.272l5.539 5.539z" fill="currentColor"/></svg></div><div class="fa"><p>Um token meme criado na Solana via Pump.fun. Não tem utilidade intrínseca — seu valor vem da comunidade e da demanda do mercado.</p></div></div><div class="fi"><div class="fq" onclick="this.parentElement.classList.toggle('o')">O contrato é renunciado?<svg viewBox="0 0 24 24" fill="none"><path d="M11.386 21.639a.9.9 0 001.27 0l5.539-5.539a.9.9 0 10-1.272-1.272L12 19.753l-4.923-4.925a.9.9 0 00-1.272 1.272l5.539 5.539z" fill="currentColor"/></svg></div><div class="fa"><p>Verifique no Solscan se a autoridade de mint foi renunciada e se a liquidez está bloqueada. Sempre DYOR antes de investir.</p></div></div><div class="fi"><div class="fq" onclick="this.parentElement.classList.toggle('o')">Qual a taxa de slippage recomendada?<svg viewBox="0 0 24 24" fill="none"><path d="M11.386 21.639a.9.9 0 001.27 0l5.539-5.539a.9.9 0 10-1.272-1.272L12 19.753l-4.923-4.925a.9.9 0 00-1.272 1.272l5.539 5.539z" fill="currentColor"/></svg></div><div class="fa"><p>Para tokens com baixa liquidez, use 5-10% de slippage. No Jupiter, vá em Settings e ajuste conforme necessário.</p></div></div><div class="fi"><div class="fq" onclick="this.parentElement.classList.toggle('o')">Como acompanhar o preço?<svg viewBox="0 0 24 24" fill="none"><path d="M11.386 21.639a.9.9 0 001.27 0l5.539-5.539a.9.9 0 10-1.272-1.272L12 19.753l-4.923-4.925a.9.9 0 00-1.272 1.272l5.539 5.539z" fill="currentColor"/></svg></div><div class="fa"><p>Use DexScreener, Birdeye ou o próprio Jupiter. Cole o endereço do contrato para ver o gráfico em tempo real.</p></div></div></div>
+  // Ring diagram: nodes around a circle, one highlighted node cycles
+  const svgNS = "http://www.w3.org/2000/svg";
+  const group = document.getElementById('ringGroup');
+  const cx = 150, cy = 150, r = 100;
+  const n = 8;
+  const nodes = [];
+  for (let i = 0; i < n; i++) {
+    const angle = (i / n) * Math.PI * 2 - Math.PI / 2;
+    const x = cx + r * Math.cos(angle);
+    const y = cy + r * Math.sin(angle);
+    nodes.push({x, y});
+  }
+  // edges (ring)
+  for (let i = 0; i < n; i++) {
+    const a = nodes[i], b = nodes[(i + 1) % n];
+    const line = document.createElementNS(svgNS, 'line');
+    line.setAttribute('x1', a.x); line.setAttribute('y1', a.y);
+    line.setAttribute('x2', b.x); line.setAttribute('y2', b.y);
+    line.setAttribute('class', 'ring-edge');
+    group.appendChild(line);
+  }
+  const circles = nodes.map((p) => {
+    const c = document.createElementNS(svgNS, 'circle');
+    c.setAttribute('cx', p.x); c.setAttribute('cy', p.y); c.setAttribute('r', 9);
+    c.setAttribute('class', 'ring-node');
+    group.appendChild(c);
+    return c;
+  });
+  let activeIdx = 0;
+  circles[activeIdx].classList.add('active');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduced) {
+    setInterval(() => {
+      circles[activeIdx].classList.remove('active');
+      activeIdx = (activeIdx + 1) % n;
+      circles[activeIdx].classList.add('active');
+    }, 1400);
+  }
+</script>
 
-<div class="wb"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 7a.9.9 0 00-.9.826v6.348a.9.9 0 001.8 0V7.826A.9.9 0 0012 7zM12.9 17.1a.9.9 0 11-1.8 0 .9.9 0 011.8 0z" fill="currentColor"/><path d="M12 2.1a9.9 9.9 0 100 19.8 9.9 9.9 0 000-19.8zm0 1.8a8.1 8.1 0 110 16.2 8.1 8.1 0 010-16.2z" fill="currentColor"/></svg><div class="wt">Tokens meme são altamente especulativos e arriscados. Não invista mais do que pode perder. Este não é um conselho financeiro. Sempre faça sua própria pesquisa (DYOR).</div></div>
-</div>
-
-<div class="toast" id="toast">Endereço copiado!</div>
 </body>
 </html>
